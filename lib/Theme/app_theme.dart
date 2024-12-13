@@ -14,13 +14,25 @@ class AppTheme {
 
     listTileTheme: ListTileThemeData(
       tileColor: Colors.black38,
+      subtitleTextStyle: const TextStyle(
+        fontSize: 14,
+        color: Colors.white,
+      ),
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      horizontalTitleGap: 10,
+      horizontalTitleGap: 30,
       minVerticalPadding: 10,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),
       textColor: Colors.white,
+    ),
+
+    cardTheme: const CardTheme(
+      color: Color.fromARGB(255, 47, 47, 47),
+      elevation: 4,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+      ),
     ),
 
     appBarTheme: const AppBarTheme(
@@ -36,8 +48,8 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.black45,
-        foregroundColor: Colors.white54,
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         textStyle: const TextStyle(
           fontSize: 16,

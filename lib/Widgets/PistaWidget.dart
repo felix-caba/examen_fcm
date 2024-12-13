@@ -20,18 +20,18 @@ class Pistawidget extends StatelessWidget {
             child: Column(
           children: [
             Image.network(img),
-            Padding(padding: const EdgeInsets.all(10)),
+            const Padding(padding: EdgeInsets.all(10)),
             ListTile(
               title: Text(pista),
               subtitle: Text(desc),
             ),
-            Padding(padding: const EdgeInsets.all(10)),
+            const Padding(padding: EdgeInsets.all(10)),
             // boton reserva
             ElevatedButton(
               onPressed: () {},
-              child: Text('Reservar'),
+              child: const Text('Reservar'),
             ),
-            Padding(padding: const EdgeInsets.all(10)),
+            const Padding(padding: EdgeInsets.all(10)),
           ],
         ))));
   }
