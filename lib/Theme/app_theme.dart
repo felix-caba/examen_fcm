@@ -11,6 +11,7 @@ class AppTheme {
       bodyMedium: TextStyle(fontSize: 16, color: Colors.black87),
       bodySmall: TextStyle(fontSize: 14, color: Colors.black54),
     ),
+
     listTileTheme: ListTileThemeData(
       tileColor: Colors.black38,
       contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -21,9 +22,10 @@ class AppTheme {
       ),
       textColor: Colors.white,
     ),
+
     appBarTheme: const AppBarTheme(
       backgroundColor: Colors.black26,
-      foregroundColor: Colors.white12,
+      foregroundColor: Colors.white,
       elevation: 4,
       titleTextStyle: TextStyle(
           fontSize: 20, fontWeight: FontWeight.bold, color: Colors.white),
@@ -34,7 +36,7 @@ class AppTheme {
     ),
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.black45,
         foregroundColor: Colors.white54,
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
         textStyle: const TextStyle(

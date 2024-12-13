@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:examen_fcm/Widgets/PistaWidget.dart';
 
 class PistaScreen extends StatelessWidget {
   final String avatarUrl =
@@ -8,7 +9,6 @@ class PistaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false, // quito la flecha
         title: Row(
           children: [
             CircleAvatar(
@@ -19,7 +19,28 @@ class PistaScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Column(),
+      body: const Column(
+        children: [
+          Pistawidget(
+            pista: 'Pista de Padel',
+            desc: 'Pista',
+            img:
+                'https://padelmagic.es/wp-content/uploads/2023/09/0b5a1993-7eab-42d2-b85e-e947cbd5a751.jpg',
+          ),
+          Pistawidget(
+            pista: 'Piscina Cubierta',
+            desc: 'Pista',
+            img:
+                'https://www.pmdgranada.es/comun/galerias/INS-ARABIAL/IPA-lg-02.jpg',
+          ),
+          Pistawidget(
+            pista: 'Pista de Baloncesto',
+            desc: 'Pista',
+            img:
+                'https://santaeulariadesriu.com/templates/yootheme/cache/ef/20230918_Pista_baloncesto_sOlivera_3F-ef10d2bb.jpeg',
+          ),
+        ],
+      ),
     );
   }
 }

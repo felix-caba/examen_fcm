@@ -10,12 +10,21 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
+  final bool estoyDebug = true;
   @override // para liberar recursos, elimino los controladores
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    if (estoyDebug) {
+      _emailController.text = 'felix04caba@gmail.com';
+      _passwordController.text = '123456';
+    }
   }
 
   void _login() {
