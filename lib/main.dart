@@ -1,5 +1,6 @@
 import 'package:examen_fcm/Screen/ListViewScreen_Fcm.dart';
 import 'package:examen_fcm/Screen/Login_Screen_Fcm.dart';
+import 'package:examen_fcm/Screen/MonitoresScren_Fcm.dart';
 import 'package:examen_fcm/Screen/Pista_Screen.Fcm.dart';
 import 'package:examen_fcm/Screen/Welcome_Screen_Fcm.dart';
 import 'package:examen_fcm/Theme/app_theme.dart';
@@ -22,6 +23,7 @@ class MainApp extends StatelessWidget {
         '/login': (context) => LoginScreen(), // Ruta de login
         '/listView': (context) => ListViewScreen(), // Ruta de ListView
         '/pistas': (context) => PistaScreen(), // Ruta de PistaScreen
+        '/monitores': (context) => MonitoresScreen(), // Ruta de ListViewScreen
       },
     );
   }

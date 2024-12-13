@@ -7,9 +7,9 @@ class AppTheme {
     visualDensity: VisualDensity.adaptivePlatformDensity, // densidad
     textTheme: const TextTheme(
       bodyLarge: TextStyle(
-          fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black),
-      bodyMedium: TextStyle(fontSize: 16, color: Colors.black87),
-      bodySmall: TextStyle(fontSize: 14, color: Colors.black54),
+          fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+      bodyMedium: TextStyle(fontSize: 16, color: Colors.white),
+      bodySmall: TextStyle(fontSize: 14, color: Colors.white54),
     ),
 
     listTileTheme: ListTileThemeData(
