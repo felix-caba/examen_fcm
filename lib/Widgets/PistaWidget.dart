@@ -19,7 +19,23 @@ class Pistawidget extends StatelessWidget {
         child: Card(
             child: Column(
           children: [
-            Image.network(img),
+            const Padding(padding: EdgeInsets.all(10)),
+            Image.network(
+              img,
+              width: 250,
+              height: 250,
+              fit: BoxFit.cover,
+              loadingBuilder: (BuildContext context, Widget child,
+                  ImageChunkEvent? loadingProgress) {
+                if (loadingProgress == null) {
+                  return child;
+                } else {
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                }
+              },
+            ),
             const Padding(padding: EdgeInsets.all(10)),
             ListTile(
               title: Text(pista),

@@ -11,6 +11,18 @@ class AppTheme {
       bodyMedium: TextStyle(fontSize: 16, color: Colors.white),
       bodySmall: TextStyle(fontSize: 14, color: Colors.white54),
     ),
+    dialogTheme: const DialogTheme(
+      backgroundColor: Colors.black45,
+      titleTextStyle: TextStyle(
+        fontSize: 20,
+        fontWeight: FontWeight.bold,
+        color: Colors.white,
+      ),
+      contentTextStyle: TextStyle(
+        fontSize: 16,
+        color: Colors.white,
+      ),
+    ),
 
     listTileTheme: ListTileThemeData(
       tileColor: Colors.black38,

@@ -41,7 +41,31 @@ class ListViewScreen extends StatelessWidget {
             leading: const Icon(Icons.calendar_today),
             title: const Text('Reservas'),
             trailing: const Icon(Icons.arrow_forward_ios),
-            onTap: () {},
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: const Text('Aviso'),
+                    content: const Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text('No se ha implementado aun .'),
+                        FlutterLogo(size: 100),
+                      ],
+                    ),
+                    actions: <Widget>[
+                      ElevatedButton(
+                        child: const Text('OK'),
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
           ),
         ],
       ),
