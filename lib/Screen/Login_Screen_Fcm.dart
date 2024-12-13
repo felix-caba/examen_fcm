@@ -10,9 +10,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-  bool _obscureText = true;
 
-  @override
+  @override // para liberar recursos, elimino los controladores
   void dispose() {
     _emailController.dispose();
     _passwordController.dispose();
@@ -21,10 +20,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _login() {
     if (_formKey.currentState!.validate()) {
-      // Aquí iría la lógica de autenticación
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Iniciando sesión...')),
       );
+      Navigator.pushNamed(context, '/listView');
     }
   }
 
@@ -32,61 +31,54 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Iniciar Sesión'),
+        title: const Text('Iniciar Sesión'),
       ),
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Form(
               key: _formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  FlutterLogo(size: 100),
-                  SizedBox(height: 30),
+                  const FlutterLogo(size: 100),
+                  const SizedBox(height: 30),
                   TextFormField(
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
                     controller: _emailController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Correo Electrónico',
                       prefixIcon: Icon(Icons.email),
                       border: OutlineInputBorder(),
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Por favor ingrese su correo';
+                        return 'mete tu correo electronico, porfavor';
                       }
-                      // Validación básica de correo electrónico
-                      final emailRegex =
-                          RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                      // regex para correos
+                      final emailRegex = RegExp(
+                          r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$'); // este regex no lo he hecho yo, lo he
+                      // sacado de uno de mis proyectos de github
                       if (!emailRegex.hasMatch(value)) {
-                        return 'Ingrese un correo válido';
+                        return 'Introduce un correo valido';
                       }
                       return null;
                     },
                     keyboardType: TextInputType.emailAddress,
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextFormField(
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
                     controller: _passwordController,
-                    decoration: InputDecoration(
+                    decoration: const InputDecoration(
                       labelText: 'Contraseña',
                       prefixIcon: Icon(Icons.lock),
-                      suffixIcon: IconButton(
-                        icon: Icon(
-                          _obscureText
-                              ? Icons.visibility
-                              : Icons.visibility_off,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            _obscureText = !_obscureText;
-                          });
-                        },
-                      ),
-                      border: OutlineInputBorder(),
                     ),
-                    obscureText: _obscureText,
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Por favor ingrese su contraseña';
@@ -97,20 +89,20 @@ class _LoginScreenState extends State<LoginScreen> {
                       return null;
                     },
                   ),
-                  SizedBox(height: 30),
+                  const SizedBox(height: 30),
                   ElevatedButton(
                     onPressed: _login,
-                    child: Text('Iniciar Sesión'),
                     style: ElevatedButton.styleFrom(
-                      minimumSize: Size(double.infinity, 50),
+                      minimumSize: const Size(double.infinity, 50),
                     ),
+                    child: const Text('Iniciar Sesión'),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/signup');
+                      null;
                     },
-                    child: Text('¿No tienes cuenta? Regístrate'),
+                    child: const Text('¿No tienes cuenta? registrate'),
                   ),
                 ],
               ),

@@ -13,24 +13,7 @@ class WelcomeScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(context, '/login');
                 },
-                child: Container(
-                  width: 250,
-                  height: 250,
-                  decoration: const BoxDecoration(
-                    shape: BoxShape.circle,
-                    image: DecorationImage(
-                      image: AssetImage('assets/welcome_image.png'),
-                      fit: BoxFit.cover,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        blurRadius: 10,
-                        offset: Offset(0, 5),
-                      ),
-                    ],
-                  ),
-                ),
+                child: const FlutterLogo(size: 100),
               ),
               const SizedBox(height: 30),
               const Text(
@@ -46,26 +29,16 @@ class WelcomeScreen extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      null;
+                      Navigator.pushNamed(context, '/login');
                     },
                     child: const Text('Iniciar Sesión'),
-                    style: ElevatedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 15),
-                      backgroundColor: Colors.grey.shade400,
-                      foregroundColor: Colors.white,
-                    ),
                   ),
                   const SizedBox(width: 20),
-                  OutlinedButton(
+                  ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, '/signup');
+                      null;
                     },
                     child: const Text('Registrarse'),
-                    style: OutlinedButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 15),
-                    ),
                   ),
                 ],
               ),

@@ -1,5 +1,7 @@
+import 'package:examen_fcm/Screen/ListViewScreen_Fcm.dart';
 import 'package:examen_fcm/Screen/Login_Screen_Fcm.dart';
 import 'package:examen_fcm/Screen/Welcome_Screen_Fcm.dart';
+import 'package:examen_fcm/Theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,14 +14,12 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
+      title: 'Examen FCM',
+      theme: AppTheme.temaOscuro,
       home: WelcomeScreen(),
       routes: {
-        '/login': (context) => LoginScreen(),
+        '/login': (context) => LoginScreen(), // Ruta de login
+        '/listView': (context) => ListViewScreen(), // Ruta de ListView
       },
     );
   }
