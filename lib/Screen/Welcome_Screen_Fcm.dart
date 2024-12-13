@@ -9,16 +9,14 @@ class WelcomeScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Imagen en medio de la pantalla
               GestureDetector(
                 onTap: () {
-                  // Navegar a la pantalla de login
                   Navigator.pushNamed(context, '/login');
                 },
                 child: Container(
                   width: 250,
                   height: 250,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     shape: BoxShape.circle,
                     image: DecorationImage(
                       image: AssetImage('assets/welcome_image.png'),
@@ -34,15 +32,15 @@ class WelcomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
-              Text(
+              const SizedBox(height: 30),
+              const Text(
                 'Bienvenido',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -50,23 +48,23 @@ class WelcomeScreen extends StatelessWidget {
                     onPressed: () {
                       null;
                     },
-                    child: Text('Iniciar Sesión'),
+                    child: const Text('Iniciar Sesión'),
                     style: ElevatedButton.styleFrom(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 15),
                       backgroundColor: Colors.grey.shade400,
                       foregroundColor: Colors.white,
                     ),
                   ),
-                  SizedBox(width: 20),
+                  const SizedBox(width: 20),
                   OutlinedButton(
                     onPressed: () {
                       Navigator.pushNamed(context, '/signup');
                     },
-                    child: Text('Registrarse'),
+                    child: const Text('Registrarse'),
                     style: OutlinedButton.styleFrom(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 15),
                     ),
                   ),
                 ],
